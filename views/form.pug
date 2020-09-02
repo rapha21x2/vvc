@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= `${title}`
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/styles.css')
+    
+  body
+    div.container.listing-reg
+      h1 there may have been any error when you tried to fill the form 
+      
+
+      
+
+block content
+  -data = data || {}
+
+  if errors
+    ul.my-errors
+      for error in errors
+        li= error.msg
+
+  form(action="/orderpage.ejs" method="POST" class="form-registration")
+   
+
+    input(
+      type="submit"
+      value="try again"
+      class="btn btn-lg btn-primary btn-block"
+    )

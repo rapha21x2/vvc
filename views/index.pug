@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+  if registrations.length
+    table.listing-table.table-dark.table-striped
+      tr
+        th Name
+        th Email
+        th address
+        th order
+        th number
+        th amount
+      each registration in registrations
+        tr
+          td= registration.name
+          td= registration.email
+          td= registration.address
+          td= registration.order
+          td= registration.number
+          td= registration.amount
+          
+           input(
+             id ="delete-me"
+      type="submit"
+      value="delete-me"
+      class="btn btn-lg btn-primary btn-block"
+    )
+          script(src="script.js")
+            script(src="https://unpkg.com/axios/dist/axios.min.js")
+
+  else
+    p No registrations yet :(
